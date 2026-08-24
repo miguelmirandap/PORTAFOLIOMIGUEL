@@ -211,11 +211,14 @@ html { scroll-behavior: smooth; }
 .project-card {
   display: flex;
   flex-direction: column;
-  min-height: 260px;
+  min-height: 420px;
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(16,18,24,0.96));
   border: 1px solid color-mix(in srgb, var(--ring), white 10%);
+  border-radius: 18px;
   position: relative;
   overflow: hidden;
+  padding: 0;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
 }
 
 .project-card::before {
@@ -232,11 +235,43 @@ html { scroll-behavior: smooth; }
   border-color: rgba(110, 193, 255, 0.4);
 }
 
+.project-visual {
+  height: 190px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ring);
+}
+
+.project-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-visual img {
+  transform: scale(1.04);
+}
+
+.project-body {
+  padding: 18px 18px 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .project-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.project-card h3 {
+  margin: 0 0 10px;
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  line-height: 1.3;
 }
 
 .project-tag {
@@ -269,7 +304,7 @@ html { scroll-behavior: smooth; }
 .project-meta {
   list-style: none;
   padding: 0;
-  margin: 0 0 18px;
+  margin: 0 0 8px;
   display: grid;
   gap: 8px;
 }
@@ -295,7 +330,26 @@ html { scroll-behavior: smooth; }
 
 .project-card .card-actions {
   margin-top: auto;
-  padding-top: 6px;
+  padding: 0 18px 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-card .link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--ring), white 10%);
+  background: rgba(255, 255, 255, 0.02);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card .link:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--brand), white 20%);
 }
 
 /* Soft skills panel */
