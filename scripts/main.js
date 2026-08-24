@@ -230,6 +230,7 @@ const CONFIG = {
     const existing = (whatsNumberEl.textContent || '').trim();
     if (existing) wa = existing;
   }
+  if (!wa) wa = '+57 3005335912';
 
   // Panel CTAs
   const gmailComposeUrl = (to, subject = '', body = '') =>
